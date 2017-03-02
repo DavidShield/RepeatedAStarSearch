@@ -1,35 +1,18 @@
+/******************************/
+//Auther: Dawei Wang, Tianzhe Wang
+//Date: Feb. 2017
 //
-public class Cell {
-	//0.
-	public int x;
-	public int y;
-	public boolean visited = false;
-	public boolean blocked = false;
-	public int g;
-	public int h;
-	public int f;
-	public Cell parent;
-	public boolean inPath = false;
-	
-	//1.
-	public Cell(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}
-	
-	//2.
-	public int compareTo(Cell cell) {
-		int result = 0;
-		if (f > cell.f) result = 1;
-		else if (f < cell.f) result = -1;
-		else {
-			if (g > cell.g) result = 1;
-			else if (g < cell.g) result = -1;
-			else {
-				if (h > cell.h) result = 1;
-				else if (h < cell.h) result = -1;
-			}
-		}
-		return result;
+/******************************/
+public class Start {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Maze maze = new Maze(50, 50);
+		maze.initial();
+		maze.generate();
+		maze.forwardRepeatedSearch();
+		//maze.backwardSearch();
+		//maze.drawMaze();
+		maze.drawPath();
 	}
 }
